@@ -38,7 +38,7 @@ module OAuth::Client
         'oauth_verifier'         => options[:oauth_verifier],
         'oauth_version'          => (options[:oauth_version] || '1.0'),
         'oauth_session_handle'   => options[:oauth_session_handle]
-      }.reject { |k,v| v.to_s == "" }
+      }.reject { |k,v| v.nil? }
     end
 
     def signature(extra_options = {})
